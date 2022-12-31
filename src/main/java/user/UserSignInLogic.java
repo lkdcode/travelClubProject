@@ -4,35 +4,25 @@ import exception.ErrorMessage;
 
 import java.util.Scanner;
 
-public class UserServiceLogic implements UserService {
+public class UserSignInLogic implements UserSignIn {
     private final Scanner scanner = new Scanner(System.in);
     private String userId;
     private String userPassword;
 
+
     @Override
-    public void signInService() {
-        inputId();
+    public void signIn(MemberStore memberStore) {
+        inputId(memberStore);
         inputPassword();
+        memberStore.addMember(userId, userPassword);
     }
 
-    @Override
-    public void userLoginSurvice() {
 
-    }
-
-    private void loginId() {
-
-    }
-
-    private void loginPassword() {
-
-    }
-
-    private void inputId() {
+    private void inputId(MemberStore memberStore) {
 
         do {
             Message.INPUT_ID.getView();
-            this.userId = UserInputValidate.getUserInputValidateInstance()
+            this.userId = UserInputValidate
                     .userIdValidate(scanner.nextLine());
             if (memberStore.getMemberList().containsKey(this.userId)) {
                 this.userId = "null";
@@ -45,7 +35,7 @@ public class UserServiceLogic implements UserService {
     private void inputPassword() {
         do {
             Message.INPUT_PASSWORD.getView();
-            this.userPassword = UserInputValidate.getUserInputValidateInstance()
+            this.userPassword = UserInputValidate
                     .userPasswordValidate(scanner.nextLine());
         } while (this.userPassword.equals("null"));
     }

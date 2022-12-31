@@ -1,3 +1,5 @@
+package exception;
+
 public class UserInputException extends RuntimeException {
 
     public void idException() throws UserInputException {

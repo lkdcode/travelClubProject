@@ -1,2 +1,4 @@
-package user.dao;public class MemberDAO {
+package user.dao;
+
+public class MemberDAO {
 }

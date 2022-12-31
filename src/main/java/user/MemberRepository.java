@@ -3,28 +3,21 @@ package user;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MemberList implements MemberStore {
+public class MemberRepository implements MemberStore {
+    private Map<String, String> memberList;
 
-    private Map<String, String> userInformation;
-
-    private String userId;
-    private String userPassword;
-
-
-    public MemberList() {
-        this.userInformation = new HashMap<>();
+    public MemberRepository() {
+        this.memberList = new HashMap<>();
     }
 
-    public void setUserId() {
 
-    }
-
-    public void setUserPassword() {
-
+    @Override
+    public void addMember(String id, String password) {
+        memberList.put(id, password);
     }
 
     @Override
-    public void setMemberList(String id, String password) {
-
+    public Map<String, String> getMemberList() {
+        return memberList;
     }
 }

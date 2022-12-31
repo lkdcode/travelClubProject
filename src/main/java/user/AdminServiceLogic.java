@@ -1,6 +1,6 @@
 package user;
 
-public class ClubServiceLogic implements ClubService {
+public class AdminServiceLogic implements AdminService {
     @Override
     public void retrieveAll(MemberStore memberStore) {
 

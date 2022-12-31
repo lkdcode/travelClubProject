@@ -1,6 +1,6 @@
 package user;
 
-public interface ClubService {
+public interface AdminService {
     void retrieveAll(MemberStore memberStore);
     void retrieveById(MemberStore memberStore);
     void delete(MemberStore memberStore);

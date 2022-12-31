@@ -1,2 +1,6 @@
-package user;public interface UserLogIn {
+package user;
+
+public interface UserLogIn {
+
+    void logIn(MemberStore memberStore);
 }
